@@ -12,6 +12,7 @@ function Navbar() {
       </div>
       <div className="links">
         <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
         <Link to="/register">Register</Link>
         <Link to="/admin/login" style={{ background: 'rgba(255,255,255,0.2)', padding: '0.35rem 0.75rem', borderRadius: '4px' }}>
           Admin
