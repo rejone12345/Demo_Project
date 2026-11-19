@@ -1,0 +1,16 @@
+{$SITE_ADDRESS::80} {
+    root * /usr/share/caddy
+    file_server
+
+    # Reverse proxy backend API calls
+    handle /api/* {
+        reverse_proxy backend:5000
+    }
+
+    # SPA history fallback for React Router (/register, /admin/login, /admin/dashboard)
+    handle {
+        try_files {path} /index.html
+    }
+
+    encode gzip zstd
+}
